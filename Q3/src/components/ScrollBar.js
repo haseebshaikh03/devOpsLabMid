@@ -1,11 +1,10 @@
-import React from 'react';
-
 const ScrollBar = () => {
-    return (
-        <div className="scroll-bar">
-            {/* Custom scrollbar implementation goes here */}
-        </div>
-    );
+  return (
+    <div className="scroll-progress hide-mobile">
+      <div>
+        <div />
+      </div>
+    </div>
+  );
 };
-
 export default ScrollBar;

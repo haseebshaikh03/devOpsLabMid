@@ -1,22 +1,37 @@
-import React from 'react';
-import Header from '../src/components/Header';
-import SalimovHead from '../src/SalimovHead';
-import Preloader from '../src/components/Preloader';
-import Footer from '../src/components/Footer'; // Assuming you have a Footer component
+import Header from "@/src/components/Header";
+import ScrollBar from "@/src/components/ScrollBar";
+import About from "@/src/components/sections/About";
+import Copyright from "@/src/components/sections/Copyright";
+import Facts from "@/src/components/sections/Facts";
+import Home from "@/src/components/sections/Home";
+import Contact from "@/src/components/sections/Contact";
+import Separator from "@/src/components/Separator";
+import { jqueryFuntion } from "@/src/utilits";
+import { Fragment, useEffect } from "react";
+const Index = () => {
+  useEffect(() => {
+    jqueryFuntion();
+  });
 
-const Home = () => {
   return (
-    <div>
-      <SalimovHead />
-      <Header />
-      <Preloader />
-      <main>
-        <h1>Welcome to Our Next.js Application</h1>
-        <p>This is the homepage of our application.</p>
-      </main>
-      <Footer />
-    </div>
+    <Fragment>
+      <div className="page-content">
+        <Header />
+        <div id="wrapper">
+          <main className="flex-column-mobile">
+            <Home />
+            <About />
+            <Separator type={"down"} />
+            <Facts />
+            <Separator type={"up"} />
+            <Contact />
+            <Separator type={"down"} />
+            <Copyright />
+          </main>
+        </div>
+        <ScrollBar />
+      </div>
+    </Fragment>
   );
 };
-
-export default Home;
+export default Index;

@@ -1,19 +1,17 @@
-import App from 'next/app';
-import '../styles/globals.css';
+import Preloader from "@/src/components/Preloader";
+import Switcher from "@/src/components/Switcher";
+import SalimovHead from "@/src/SalimovHead";
+import "@/styles/globals.css";
+import { Fragment } from "react";
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-    return { pageProps };
-  }
-
-  render() {
-    const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
-  }
-}
-
-export default MyApp;
+const App = ({ Component, pageProps }) => {
+  return (
+    <Fragment>
+      <SalimovHead />
+      {/* <Switcher /> */}
+      <Preloader />
+      <Component {...pageProps} />
+    </Fragment>
+  );
+};
+export default App;
