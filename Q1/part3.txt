@@ -1,0 +1,12 @@
+`/home/ubuntu/part3/Dockerfile`:
+```yml
+FROM alpine:3.14
+
+WORKDIR /usr/local/apache2/RandomDirectory
+
+```
+cd /home/ubuntu/part3
+sudo docker build .
+sudo docker images
+sudo docker run -d --name <name> <image id>
+sudo docker ps -a
