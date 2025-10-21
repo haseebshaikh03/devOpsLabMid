@@ -1,0 +1,8 @@
+sudo docker pull httpd
+sudo docker volume create testVol
+sudo docker volume ls
+sudo docker run -d --name httpd_c1 -v /testVol httpd
+sudo docker ps
+sudo docker exec -it <container id> /bin/bash
+cd /
+ls
