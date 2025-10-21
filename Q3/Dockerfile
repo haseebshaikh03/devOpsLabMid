@@ -2,7 +2,8 @@ FROM node:14
 
 WORKDIR /app
 
-COPY . .
+# COPY . .\
+RUN ls -la
 
 RUN npm install
 
@@ -10,4 +11,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-# CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
